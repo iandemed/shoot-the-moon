@@ -6,10 +6,11 @@ const config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: false
+            debug: true
         }
     },
-    scene: [BootGame, PlayGame] 
+    scene: [BootGame, PlayGame],
+    pixelArt: true
 };
 
-var game = new Phaser.Game(config);
+var game = new Phaser.Game(config)

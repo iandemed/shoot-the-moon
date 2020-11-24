@@ -1,18 +1,37 @@
-class playGame extends Phaser.Scene{
+class PlayGame extends Phaser.Scene{
     constructor(){
         super("playGame")
     }
 
     create(){
 
-        this.player1 = this.create_paddle(0, config.width/2)
+        /* ---- Create the background ---- */
+        this.nebulaeBack = this.add.tileSprite(0,0, 
+            config.width, 
+            config.height, 
+            "nebulae-back")
+        this.nebulaeBack.setOrigin(0,0)
+        
+        this.starsBack = this.add.tileSprite(0, 0, 
+            config.width, 
+            config.height, 
+            "stars-back")
+        this.starsBack.setOrigin(0,0)
+        
+
+
+
+        /* ---- Create the paddles ---- */
+        this.player1 = this.physics.add.sprite(100,config.height/2, "player1")
+        
+        
+        this.player2 = this.physics.add.sprite(config.width - 100,config.height/2, "player2")
 
     }
 
-    create_paddle(x,y, image){
-        let paddle = this.physics.add.sprite(x,y, image)
-        paddle.setCollideWorldBounds(true)
+    update(){
 
-        return paddle
+        this.nebulaeBack.tilePositionY -= 0.65
+        this.starsBack.tilePositionX -= 0.5
     }
 }

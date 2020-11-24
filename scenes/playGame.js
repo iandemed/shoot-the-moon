@@ -47,14 +47,32 @@ class PlayGame extends Phaser.Scene{
             "ball")
         this.ball.setCollideWorldBounds(true)
         this.ball.setBounce(1)
-        this.ball.setVelocity(400,400)
+        this.ball.setVelocity(gameSettings.ballSpeed, gameSettings.ballSpeed)
 
         /* ---- Create collision physics for ball and paddles ---- */
         this.physics.add.collider(this.paddles, this.ball)
+
+        /* ---- Set up player controls ---- */
+        this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
+        this.p1_up = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W) 
+        this.p1_down = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S) 
     }
+
+    movePlayer1(){
+        if(this.p1_up.isDown){
+            this.player1.setVelocityY(-gameSettings.paddleSpeed)
+        } else if(this.p1_down.isDown){
+            this.player1.setVelocityY(gameSettings.paddleSpeed)
+        } else {
+            this.player1.setVelocityY(0)
+        }
+    }
+
 
     update(){
 
         this.starsBack.tilePositionY -= 0.5
+        
+        this.movePlayer1()
     }
 }

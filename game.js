@@ -1,4 +1,10 @@
 /* --- Set-up the basics of the game file --- */
+
+const gameSettings = {
+    paddleSpeed: 400,
+    ballSpeed: 400
+}
+
 const config = {
     type: Phaser.AUTO,
     width: 1350,

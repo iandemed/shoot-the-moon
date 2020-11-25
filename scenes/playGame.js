@@ -55,9 +55,11 @@ class PlayGame extends Phaser.Scene{
         /* ---- Set up player controls ---- */
         this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
         this.p1_up = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W) 
-        this.p1_down = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S) 
-    }
+        this.p1_down = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S)
 
+        this.cursorKeys = this.input.keyboard.createCursorKeys()
+    }
+s
     movePlayer1(){
         if(this.p1_up.isDown){
             this.player1.setVelocityY(-gameSettings.paddleSpeed)
@@ -68,11 +70,22 @@ class PlayGame extends Phaser.Scene{
         }
     }
 
+    movePlayer2(){
+        if(this.cursorKeys.up.isDown){
+            this.player2.setVelocityY(-gameSettings.paddleSpeed)
+        } else if (this.cursorKeys.down.isDown){
+            this.player2.setVelocityY(gameSettings.paddleSpeed)
+        } else{
+            this.player2.setVelocityY(0)
+        }
+    }
+
 
     update(){
 
         this.starsBack.tilePositionY -= 0.5
         
         this.movePlayer1()
+        this.movePlayer2()
     }
 }

@@ -1,7 +1,7 @@
 /* --- Set-up the basics of the game file --- */
 
 const gameSettings = {
-    paddleSpeed: 400,
+    paddleSpeed: 800,
     ballSpeed: 400
 }
 

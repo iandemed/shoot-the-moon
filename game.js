@@ -7,8 +7,8 @@ const gameSettings = {
 
 const config = {
     type: Phaser.AUTO,
-    width: 1350,
-    height: 1080,
+    width: 960,
+    height: 540,
     physics: {
         default: 'arcade',
         arcade: {

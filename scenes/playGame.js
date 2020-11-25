@@ -6,17 +6,24 @@ class PlayGame extends Phaser.Scene{
     create(){
 
         /* ---- Create the background ---- */
-        this.nebulaeBack = this.add.tileSprite(0,0, 
+        this.nebulaeRed = this.add.tileSprite(0,0, 
             config.width, 
             config.height, 
-            "nebulae-back")
-        this.nebulaeBack.setOrigin(0,0)
+            "nebulae-red")
+        this.nebulaeRed.setOrigin(0,0)
         
-        this.starsBack = this.add.tileSprite(0, 0, 
+        this.starsYellow = this.add.tileSprite(0, 0, 
             config.width, 
             config.height, 
-            "stars-back")
-        this.starsBack.setOrigin(0,0)
+            "stars-yellow")
+        this.starsYellow.setOrigin(0,0)
+        
+        this.starsBlue = this.add.tileSprite(0, 0, 
+            config.width, 
+            config.height, 
+            "stars-blue")
+        this.starsBlue.setOrigin(0,0)
+
         
 
 
@@ -83,7 +90,8 @@ s
 
     update(){
 
-        this.starsBack.tilePositionY -= 0.5
+        this.starsYellow.tilePositionY -= 0.025
+        this.starsBlue.tilePositionY -= 0.025
         
         this.movePlayer1()
         this.movePlayer2()

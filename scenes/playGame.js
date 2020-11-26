@@ -54,10 +54,11 @@ class PlayGame extends Phaser.Scene{
             "ball")
         this.ball.setCollideWorldBounds(true)
         this.ball.setBounce(1)
-        this.ball.setVelocity(gameSettings.ballSpeed, gameSettings.ballSpeed)
+        this.ball.setVelocity(gameSettings.ballSpeed, 0)
 
         /* ---- Create collision physics for ball and paddles ---- */
         this.physics.add.collider(this.paddles, this.ball)
+
 
         /* ---- Set up player controls ---- */
         this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
@@ -95,5 +96,15 @@ s
         
         this.movePlayer1()
         this.movePlayer2()
+    
+    
+        if (this.ball.x < 25){
+            console.log("Player 2 Scores")
+        }
+
+        if (this.ball.x > config.width - 25){
+            console.log("Player 1 Scores")
+        }
     }
+
 }

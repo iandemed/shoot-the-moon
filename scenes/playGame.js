@@ -99,12 +99,27 @@ s
     
     
         if (this.ball.x < 25){
+            this.reset()
             console.log("Player 2 Scores")
         }
 
         if (this.ball.x > config.width - 25){
+            this.reset()
             console.log("Player 1 Scores")
         }
+    }
+
+    reset(){
+        
+        
+        this.ball.x = config.width/2
+        this.ball.y = config.height/2
+
+        this.player1.y = config.height/2
+        this.player2.y = config.height/2
+
+        this.ball.setVelocity(gameSettings.ballSpeed, 0)
+
     }
 
 }

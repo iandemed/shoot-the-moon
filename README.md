@@ -1,5 +1,16 @@
 ﻿# Shoot the Moon
+
+## Table of Contents
  
+ - [Shoot the Moon](#shoot-the-moon)
+  - [Overview](#overview) 
+  - [Controls](#controls) 
+  - [Techincal Requirements](#techincal-requirements)
+    - [Technologies Used](#technologies-used)
+    - [Dependencies](#dependencies)
+
+### Overview
+
 Shoot the Moon is a stylized single-player pong-like game created using PhaserJs. Players play against the computer and try to score points by getting the ball (or moon) past the non-player character. The first player to 7 points wins.
  
 I first undertook this project as a part of a MintBean hack-a-thon but was not able to finish on time. I have continued this project so that I can successfully complete the creation of a game and practice JavaScript using a unique framework.
@@ -9,14 +20,6 @@ I first undertook this project as a part of a MintBean hack-a-thon but was not a
  ### Controls
  
 Players control the paddle on the left-hand side of the screen (Player 1) and move up and down using the W and S keys respectively.
- 
- ## Table of Contents
- 
- - [Shoot the Moon](#shoot-the-moon)
-  - [Controls](#controls) 
-  - [Techincal Requirements](#techincal-requirements)
-    - [Technologies Used](#technologies-used)
-    - [Dependencies](#dependencies)
 
 ## Technical Requirements
 
